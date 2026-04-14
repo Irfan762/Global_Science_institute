@@ -30,7 +30,7 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <p>📞 +91 7249511729</p>
           <p>📧 info@globalscience.in</p>
-          <p>📍 Karmala | Wakad | Rahatani</p>
+          <p>📍 Karmala | Solapur </p>
         </div>
       </div>
       <div className="footer-bottom">

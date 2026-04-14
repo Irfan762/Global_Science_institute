@@ -49,6 +49,33 @@ const stats = [
   { value: '12', label: 'Excellence Hubs' },
 ];
 
+const testimonials = [
+  {
+    name: 'Rahul Patil', initial: 'R', exam: 'JEE Mains', city: 'Karmala',
+    text: "The faculty here is exceptional. Their structured approach to Physics and Maths helped me crack JEE with a great percentile. I couldn't have done it without GSI.",
+  },
+  {
+    name: 'Priya Shinde', initial: 'P', exam: 'NEET', city: 'Solapur',
+    text: 'The Biology sessions were incredibly detailed and the doubt-clearing classes made all the difference. I secured a seat in a government medical college — a dream come true!',
+  },
+  {
+    name: 'Akash More', initial: 'A', exam: 'MHT-CET', city: 'Karmala',
+    text: "Weekly tests and personal mentorship kept me on track throughout the year. The teachers genuinely care about every student's progress. Highly recommend GSI!",
+  },
+  {
+    name: 'Sneha Jadhav', initial: 'S', exam: 'JEE Mains', city: 'Pune',
+    text: 'Joining GSI was the best decision of my life. The digital labs and chapterwise tests gave me the confidence to face the actual exam without any fear.',
+  },
+  {
+    name: 'Omkar Kulkarni', initial: 'O', exam: 'NEET', city: 'Satara',
+    text: 'The support team and counsellors are always available. They helped me manage exam stress and stay focused. Got into NIT — forever grateful to the GSI family.',
+  },
+  {
+    name: 'Tanvi Desai', initial: 'T', exam: 'MHT-CET', city: 'Wakad',
+    text: 'Small batch sizes meant I always got individual attention. My Chemistry scores improved drastically within just two months of joining. Amazing institute!',
+  },
+];
+
 const Home = () => {
   return (
     <div className="home-page">
@@ -56,9 +83,7 @@ const Home = () => {
       {/* ── HERO ── */}
       <section
         className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.95) 100%), url(${heroImg})`,
-        }}
+        style={{ backgroundImage: `linear-gradient(rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.95) 100%), url(${heroImg})` }}
       >
         <div className="hero-glow" />
         <div className="container hero-content animate">
@@ -76,8 +101,6 @@ const Home = () => {
             <Link to="/about" className="btn-outline">Learn More</Link>
           </div>
         </div>
-
-        {/* Floating stats bar */}
         <div className="hero-stats-bar">
           <div className="container">
             <div className="hero-stats-inner">
@@ -93,21 +116,17 @@ const Home = () => {
       </section>
 
       {/* ── TOPPERS ── */}
-      <section className="toppers-section reveal">
+      <section className="toppers-section">
         <div className="container">
           <div className="flex-between mb-12">
-            <h2 className="section-title">
-              Our Elite <span className="logo-accent">Performers</span>
-            </h2>
+            <h2 className="section-title">Our Elite <span className="logo-accent">Performers</span></h2>
             <Link to="/results" className="btn-link">View All Results →</Link>
           </div>
           <div className="toppers-grid">
             {toppers.map((t, idx) => (
               <div key={idx} className="glass-card topper-card">
                 <div className="topper-rank">#{idx + 1}</div>
-                <div className="topper-avatar">
-                  <span>{t.initial}</span>
-                </div>
+                <div className="topper-avatar"><span>{t.initial}</span></div>
                 <h3>{t.name}</h3>
                 <p className="topper-city">{t.city}</p>
                 <div className="topper-exam">{t.exam}</div>
@@ -119,12 +138,10 @@ const Home = () => {
       </section>
 
       {/* ── COURSES ── */}
-      <section className="courses-section bg-dark-soft reveal">
+      <section className="courses-section bg-dark-soft">
         <div className="container">
           <div className="flex-between mb-12">
-            <h2 className="section-title">
-              Explore Our <span className="logo-accent">Courses</span>
-            </h2>
+            <h2 className="section-title">Explore Our <span className="logo-accent">Courses</span></h2>
             <Link to="/register" className="btn-link">Enroll Now →</Link>
           </div>
           <div className="courses-grid">
@@ -134,9 +151,7 @@ const Home = () => {
                   <span>{c.icon}</span>
                 </div>
                 <div className="course-tags">
-                  {c.tags.map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
-                  ))}
+                  {c.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
                 </div>
                 <h3>{c.title}</h3>
                 <p>{c.desc}</p>
@@ -148,16 +163,13 @@ const Home = () => {
       </section>
 
       {/* ── WHY US ── */}
-      <section className="why-section reveal">
+      <section className="why-section">
         <div className="container">
-          <div className="why-header text-center mb-16">
+          <div className="text-center mb-16">
             <div className="hero-badge">Why Choose Us</div>
-            <h2 className="section-title">
-              The Global Science <span className="logo-accent">Advantage</span>
-            </h2>
+            <h2 className="section-title">The Global Science <span className="logo-accent">Advantage</span></h2>
             <p className="text-muted max-w-2xl mx-auto mt-4">
-              We combine world-class faculty, cutting-edge technology, and a student-first approach
-              to deliver results that speak for themselves.
+              We combine world-class faculty, cutting-edge technology, and a student-first approach to deliver results that speak for themselves.
             </p>
           </div>
           <div className="features-grid">
@@ -172,8 +184,74 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ── */}
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="hero-badge">⭐ Student Reviews</div>
+            <h2 className="section-title">What Our Students Say <span className="logo-accent">About Us</span></h2>
+            <p className="text-muted max-w-2xl mx-auto mt-4">
+              Real words from real students who turned their dreams into results with Global Science Institute.
+            </p>
+          </div>
+          <div className="testimonials-grid">
+            {testimonials.map((t, i) => (
+              <div key={i} className="glass-card testimonial-card">
+                <div className="testimonial-stars">★★★★★</div>
+                <p className="testimonial-text">"{t.text}"</p>
+                <div className="testimonial-author">
+                  <div className="testimonial-avatar">{t.initial}</div>
+                  <div>
+                    <h5>{t.name}</h5>
+                    <p className="testimonial-meta">{t.exam} · {t.city}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MESSAGE FROM DIRECTOR ── */}
+      <section className="director-section">
+        <div className="container">
+          <div className="director-card glass-card">
+            <div className="director-glow" />
+            <div className="director-quote-mark">"</div>
+            <div className="director-body">
+              <div className="director-text">
+                <div className="hero-badge" style={{ marginBottom: '1.5rem' }}>📜 Message from the Director</div>
+                <p>
+                  Under the leadership of <strong>Mashesh Nikat</strong>, our team of Engineers has been
+                  working hard to help students in Karmala achieve their dreams. Inspired by life coaches like{' '}
+                  <strong>HG Gaurang Prabhu</strong>, <strong>HG Govind Prabhu</strong>, and{' '}
+                  <strong>HG Sanat Kumar Prabhu</strong> from ISKCON Mumbai, we focus on both academic excellence
+                  and personal growth.
+                </p>
+                <p>
+                  At present, we have <strong>28 IIT/NIT Engineers</strong> and expert Biology Post-Graduates who
+                  teach Physics, Chemistry, Mathematics, and Biology — supported by a strong team of{' '}
+                  <strong>40 professionals</strong> assisting with counseling, exams, and administration.
+                </p>
+                <p>
+                  Since our academy opened, we have seen excellent results every year. More students are securing
+                  admissions to <strong>IITs, NITs</strong>, top engineering colleges, and government medical
+                  colleges for MBBS — and we are proud to contribute to the success of students from our city.
+                </p>
+              </div>
+              <div className="director-profile">
+                <div className="director-avatar">SD</div>
+                <h4>Mashesh Nikat</h4>
+                <p className="director-title">Founder &amp; Director</p>
+                <p className="director-org">Global Science Institute</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA BANNER ── */}
-      <section className="cta-section reveal">
+      <section className="cta-section">
         <div className="container">
           <div className="cta-card glass-card">
             <div className="cta-glow" />
