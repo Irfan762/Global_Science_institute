@@ -1,0 +1,159 @@
+/* ── Stats Strip ── */
+.stats-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-card {
+  position: relative;
+  padding: 1.5rem 2.5rem;
+  flex: 1;
+  min-width: 140px;
+}
+
+.stat-card h3 {
+  font-size: 3.25rem;
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, white, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card p {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.stat-line {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+  opacity: 0.25;
+}
+
+/* ── Vision Section ── */
+.vision-card h2 {
+  font-size: 2rem;
+}
+
+.pattern-box {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  min-height: 320px;
+}
+
+.geometric-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(var(--primary-glow) 1px, transparent 1px),
+    radial-gradient(var(--secondary-glow) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.25;
+}
+
+/* ── Achievements ── */
+.year-pill {
+  display: inline-block;
+  padding: 0.35rem 1.1rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.achievement-item h4 {
+  font-size: 1.35rem;
+  margin-top: 0.75rem;
+}
+
+/* ── Team ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-member {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.member-avatar {
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(135deg, #1e293b, #020617);
+  border-radius: 2rem;
+  margin: 0 auto 2rem;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.silhouette {
+  width: 55%;
+  height: 55%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  position: relative;
+}
+
+.silhouette::before {
+  content: '';
+  position: absolute;
+  top: -22%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+}
+
+.team-member:hover .member-avatar {
+  border-color: var(--primary);
+  box-shadow: 0 0 24px var(--primary-glow);
+}
+
+.team-member h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ── About header ── */
+.about-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .stat-card { width: 100%; }
+  .team-grid { grid-template-columns: 1fr; }
+  .achievements-list { grid-template-columns: 1fr !important; }
+  .vision-section { grid-template-columns: 1fr !important; }
+}

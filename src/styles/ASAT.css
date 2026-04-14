@@ -1,0 +1,72 @@
+/* ── ASAT Benefits ── */
+.asat-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.asat-benefit-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.asat-benefit-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.asat-benefit-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── ASAT Form ── */
+.asat-form-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+.asat-form-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.asat-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+}
+
+.form-submit {
+  grid-column: span 2;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.form-submit .btn-primary {
+  padding: 1rem 3.5rem;
+  font-size: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .asat-benefits { grid-template-columns: 1fr; }
+  .asat-form { grid-template-columns: 1fr; }
+  .form-submit { grid-column: span 1; }
+}
